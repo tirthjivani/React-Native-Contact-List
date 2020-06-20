@@ -1,16 +1,16 @@
-import React from 'react';
-import { Button, StyleSheet, TextInput, View } from 'react-native';
-import Constants from 'expo-constants';
+import React from "react";
+import { Button, StyleSheet, TextInput, View } from "react-native";
+import Constants from "expo-constants";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     paddingTop: Constants.statusBarHeight,
   },
   input: {
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: "black",
     minWidth: 100,
     marginTop: 10,
     marginHorizontal: 20,
@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
 
 export default class AddContactForm extends React.Component {
   state = {
-    name: '',
-    phone: '',
+    name: "",
+    phone: "",
     isFormValid: false,
   };
 
