@@ -35,11 +35,19 @@ export default class AddContactForm extends React.Component {
   };
 
   handlePhoneChange = (phone) => {
-    this.setState({ phone });
+    if (+phone >= 0 && phone.length <= 10) {
+      this.setState({ phone });
+    }
   };
 
   handleSubmit = () => {
-    this.props.onSubmit(this.state);
+    if (
+      +this.state.phone >= 0 &&
+      this.state.phone.length === 10 &&
+      this.state.name.length >= 3
+    ) {
+      this.props.onSubmit(this.state);
+    }
   };
 
   render() {
@@ -62,6 +70,7 @@ export default class AddContactForm extends React.Component {
           style={styles.buttonadd}
           title="Submit"
           onPress={this.handleSubmit}
+          disabled={this.state.isFormValid}
         />
       </View>
     );
