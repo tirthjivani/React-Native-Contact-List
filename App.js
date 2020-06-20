@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Button,
   FlatList,
@@ -6,14 +6,14 @@ import {
   StyleSheet,
   Text,
   View,
-} from 'react-native';
-import Constants from 'expo-constants';
+} from "react-native";
+import Constants from "expo-constants";
 
-import contacts, { compareNames } from './contacts';
-import ScrollViewContacts from './ScrollViewContacts';
-import FlatListContacts from './FlatListContacts';
-import SectionListContacts from './SectionListContacts';
-import AddContactForm from './AddContactForm';
+import contacts, { compareNames } from "./contacts";
+import ScrollViewContacts from "./ScrollViewContacts";
+import FlatListContacts from "./FlatListContacts";
+import SectionListContacts from "./SectionListContacts";
+import AddContactForm from "./AddContactForm";
 
 export default class App extends React.Component {
   state = {
@@ -73,11 +73,11 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     paddingTop: Constants.statusBarHeight,
   },
   buttonotggle: {
-    width: '30px',
-    margin: '10px',
+    width: "30px",
+    margin: "10px",
   },
 });
