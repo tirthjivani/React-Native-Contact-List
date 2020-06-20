@@ -1,6 +1,6 @@
-import React from 'react'
-import {Button, StyleSheet, TextInput, View} from 'react-native'
-import {Constants} from 'expo'
+import React from 'react';
+import { Button, StyleSheet, TextInput, View } from 'react-native';
+import Constants from 'expo-constants';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,28 +12,35 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'black',
     minWidth: 100,
-    marginTop: 20,
+    marginTop: 10,
     marginHorizontal: 20,
     paddingHorizontal: 10,
     paddingVertical: 5,
     borderRadius: 3,
   },
-})
+  buttonadd: {
+    marginTop: 20,
+  },
+});
 
 export default class AddContactForm extends React.Component {
   state = {
     name: '',
     phone: '',
     isFormValid: false,
-  }
+  };
 
-  handleNameChange = name => {
-    this.setState({name})
-  }
+  handleNameChange = (name) => {
+    this.setState({ name });
+  };
 
-  handlePhoneChange = phone => {
-    this.setState({phone})
-  }
+  handlePhoneChange = (phone) => {
+    this.setState({ phone });
+  };
+
+  handleSubmit = () => {
+    this.props.onSubmit(this.state);
+  };
 
   render() {
     return (
@@ -51,8 +58,12 @@ export default class AddContactForm extends React.Component {
           onChangeText={this.handlePhoneChange}
           placeholder="Phone"
         />
-        <Button title="Submit" />
+        <Button
+          style={styles.buttonadd}
+          title="Submit"
+          onPress={this.handleSubmit}
+        />
       </View>
-    )
+    );
   }
 }
